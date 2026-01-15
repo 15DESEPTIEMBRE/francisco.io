@@ -1,8 +1,10 @@
+alert("JS CARGADO CORRECTAMENTE");
+
 const btn = document.getElementById("generateBtn");
 const output = document.getElementById("output");
 
 btn.addEventListener("click", async () => {
-  output.textContent = "Generando historia...";
+  output.textContent = "Conectando con la API...";
 
   try {
     const response = await fetch(
@@ -10,9 +12,9 @@ btn.addEventListener("click", async () => {
     );
 
     const data = await response.json();
-
     output.textContent = data.join("\n\n");
   } catch (error) {
     output.textContent = "❌ Error al conectar con la API.";
   }
 });
+
