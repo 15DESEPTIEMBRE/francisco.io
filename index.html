@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <p>Prueba de cambio</p>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Generador de Historias</title>
-
-  <!-- Estilos -->
+  <meta charset="UTF-8">
+  <title>Francisco.io | Story Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <main class="container">
-    <h1>Generador de Historias</h1>
-    <p>Escribe una idea inicial y genera una historia usando una API.</p>
+<header>
+  <h1>Francisco.io</h1>
+  <p>Generador de historias usando API pública</p>
+</header>
 
-    <textarea id="prompt" placeholder="Había una vez..."></textarea>
+<main>
+  <section class="story-box">
+    <h2>Idea inicial</h2>
 
-    <button id="btnGenerar">Generar historia</button>
+    <textarea id="inputText" placeholder="Ej: Un diseñador perdido en el espacio..."></textarea>
 
-    <section class="resultado" id="resultado">
-      Aquí aparecerá la historia generada.
-    </section>
-  </main>
+    <button id="generateBtn">Generar historia</button>
 
-  <!-- Script -->
-  <script src="app.js"></script>
+    <div id="output" class="output">Aquí aparecerá la historia...</div>
+  </section>
+</main>
+
+<footer>
+  <p>Proyecto universitario – Consumo de API REST</p>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
+
