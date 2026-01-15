@@ -1,34 +1,18 @@
-const boton = document.getElementById("btnGenerar");
-const resultado = document.getElementById("resultado");
-const promptInput = document.getElementById("prompt");
+const btn = document.getElementById("generateBtn");
+const output = document.getElementById("output");
 
-boton.addEventListener("click", generarHistoria);
-
-async function generarHistoria() {
-  const prompt = promptInput.value.trim();
-
-  if (prompt === "") {
-    resultado.textContent = "Por favor escribe una idea inicial.";
-    return;
-  }
-
-  resultado.textContent = "Generando historia...";
+btn.addEventListener("click", async () => {
+  output.textContent = "Generando historia...";
 
   try {
-    const response = await fetch("https://api.quotable.io/random");
+    const response = await fetch(
+      "https://baconipsum.com/api/?type=meat-and-filler&paras=2"
+    );
+
     const data = await response.json();
 
-    const historia = `
-${prompt}
-
-${data.content}
-
-— ${data.author}
-    `;
-
-    resultado.textContent = historia;
-
+    output.textContent = data.join("\n\n");
   } catch (error) {
-    resultado.textContent = "Error al conectar con la API pública.";
+    output.textContent = "❌ Error al conectar con la API.";
   }
-}
+});
